@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: root@123
+      url: jdbc:mysql://localhost:3306/dev_lanya?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false
+      min-idle: 1
+      max-active: 50
+      filters: stat, log4j
+      test-on-borrow: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 10000
+    pool:
+      maxActive: 8
+      maxWait: 1000
+      maxIdle: 500
+      minIdle: 300
+    password:
+
+swagger:
+  show: true
+
+upload:
+  #savepath: /Users/yangqianhua/Desktop/upload/
+  savepath: /mnt/upload/
+  accesspath: http://112.25.180.236:9034/uploadPath
+

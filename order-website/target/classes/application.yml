@@ -1,0 +1,50 @@
+server:
+  port: 9021
+logging.config: classpath:logback-spring-dev.xml
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml,classpath:mapper/ext/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+spring:
+  security:
+    user:
+      name: user
+      password: 123
+  profiles:
+    active: dev
+    include: dev,test,prod
+  jmx:
+    enabled: false
+  http:
+    multipart:
+      max-file-size: 10Mb
+      max-request-size: 100Mb
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: rdsroot
+      password: l7634427
+      url: jdbc:mysql://mysql57.rdsm8bk9j76spdy.rds.bj.baidubce.com:3306/corecloud?useUnicode=true&useSSL=true
+      min-idle: 1
+      max-active: 50
+      filters: stat, log4j
+      test-on-borrow: true
+
+management:
+  health:
+    refresh:
+      enabled: true
+    db:
+      enabled: false
+    rabbit:
+      enabled: false
+
+endpoints:
+  enabled: false
+  health:
+    enabled: true
+    sensitive: false
+

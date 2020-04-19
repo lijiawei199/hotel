@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="fly-core" />
+        <module name="order-api" />
+        <module name="order-config" />
+        <module name="order-core" />
+        <module name="order-dal" />
+        <module name="order-service" />
+        <module name="order-website" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fly-core" target="1.8" />
+      <module name="order-adm-api" target="1.8" />
+      <module name="order-api" target="1.8" />
+      <module name="order-config" target="1.8" />
+      <module name="order-core" target="1.8" />
+      <module name="order-dal" target="1.8" />
+      <module name="order-service" target="1.8" />
+      <module name="order-website" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

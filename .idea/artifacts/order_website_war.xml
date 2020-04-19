@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="order-website:war">
+    <output-path>$PROJECT_DIR$/order-website/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>order-website</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="order-adm-api.war">
+      <element id="artifact" artifact-name="order-website:war exploded" />
+    </root>
+  </artifact>
+</component>

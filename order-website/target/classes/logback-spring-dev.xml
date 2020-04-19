@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <property name="default_pattern" value="%d [%t - %X{traceNo}] %-5level %c{1} - %m%n"/>
+    <property name="LOG_HOME" value="/Users/dongziliang/Documents/91.logs/canteen/api"/>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <encoder class="net.fly.logback.mdc.trace.encoder.TraceNoPatternLayoutEncoder">
+            <pattern>${default_pattern}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- info日志 -->
+    <appender name="infoFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <File>${LOG_HOME}/canteen_api.log</File>
+        <encoder class="net.fly.logback.mdc.trace.encoder.TraceNoPatternLayoutEncoder">
+            <pattern>${default_pattern}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <!--<append>true</append>-->
+        <!--<prudent>false</prudent>-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/canteen_api_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>512MB</maxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <!-- debug日志 -->
+    <appender name="debugFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <File>${LOG_HOME}/canteen_api_debug.log</File>
+        <encoder class="net.fly.logback.mdc.trace.encoder.TraceNoPatternLayoutEncoder">
+            <pattern>${default_pattern}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/canteen_api_debug_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>512MB</maxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+
+    <logger name="net.hengkun.order" level="debug">
+        <appender-ref ref="debugFile"/>
+    </logger>
+
+    <logger name="io.swagger.models.parameters" level="OFF">
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="infoFile"/>
+        <appender-ref ref="consoleLog"/>
+    </root>
+</configuration>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/fly-core/fly-core.iml" filepath="$PROJECT_DIR$/fly-core/fly-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-adm-api.iml" filepath="$PROJECT_DIR$/order-adm-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-api/order-api.iml" filepath="$PROJECT_DIR$/order-api/order-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-config/order-config.iml" filepath="$PROJECT_DIR$/order-config/order-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-core/order-core.iml" filepath="$PROJECT_DIR$/order-core/order-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-dal/order-dal.iml" filepath="$PROJECT_DIR$/order-dal/order-dal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-service/order-service.iml" filepath="$PROJECT_DIR$/order-service/order-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order-website/order-website.iml" filepath="$PROJECT_DIR$/order-website/order-website.iml" />
+    </modules>
+  </component>
+</project>
