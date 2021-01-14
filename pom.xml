@@ -43,7 +43,7 @@
         <commons.lang3.version>3.8.1</commons.lang3.version>
         <commons.text.version>1.5</commons.text.version>
 
-        <poi.version>3.16</poi.version>
+        <poi.version>4.1.2</poi.version>
         <joda-time.vesion>2.10.1</joda-time.vesion>
         <guava.version>20.0</guava.version>
         <commons.beanutils.version>1.9.3</commons.beanutils.version>
